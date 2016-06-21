@@ -1,0 +1,34 @@
+{
+  "version": "0.0.1",
+  "name": "cordova-plugin-gfit",
+  "cordova_name": "gfit",
+  "description": "A plugin that enables access to Google Play Services fitness and health repository Google Fit.",
+  "license": "MIT",
+  "author": "Per Thoresson",
+  "homepage": "https://github.com/th0ress0n/cordova-plugin-gfit",
+  "repo": "https://github.com/th0ress0n/cordova-plugin-gfit.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/th0ress0n/cordova-plugin-gfit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/th0ress0n/cordova-plugin-gfit/issues"
+  },
+  "issue": "https://github.com/th0ress0n/cordova-plugin-gfit/issues",
+  "keywords": [
+    "Health", 
+    "Fit", 
+    "Fitness", 
+    "Google Fit",
+    "ecosystem:cordova"
+  ],
+  "platforms": [
+    "android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ]
+}
