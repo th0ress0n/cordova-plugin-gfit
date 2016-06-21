@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  id="cordova-plugin-gfit"
+  version="0.0.1">
+
+  <name>Cordova Gfit</name>
+
+  <description>
+    A plugin that enables access to Google Play Services fitness and health repository Google Fit.
+  </description>
+
+  <author>Per Thoresson</author>
+
+  <license>MIT</license>
+
+  <keywords>Health, Fit, Fitness, Google Fit</keywords>
+
+  <repo>https://github.com/th0ress0n/cordova-plugin-gfit.git</repo>
+
+  <issue>https://github.com/th0ress0n/cordova-plugin-gfit/issues</issue>
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0"/>
+  </engines>
+
+
+  <!-- android -->
+  <platform name="android">
+    <framework src="com.google.android.gms:play-services-fitness:+" />
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+      <uses-permission android:name="android.permission.BODY_SENSORS" />
+    </config-file>
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="googlefit">
+        <param name="android-package" value="org.apache.cordova.googlefit.GoogleFitPlugin" />
+      </feature>
+      <access origin="https://accounts.google.com/*" />
+    </config-file>
+
+    <source-file src="src/android/GoogleFit.java" target-dir="src/org/apache/cordova/googlefit/" />
+
+    <js-module src="www/android/googlefit.js" name="googlefit">
+      <clobbers target="navigator.googlefit" />
+    </js-module>
+  </platform>
+
+</plugin>
