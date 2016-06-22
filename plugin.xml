@@ -31,25 +31,22 @@
 
   <!-- android -->
   <platform name="android">
-    <framework src="com.google.android.gms:play-services-fitness:+" />
+    <!-- <framework src="com.google.android.gms:play-services-fitness:+" /> -->
 
-    <!-- Adding for compatibility reasons -->
-    <dependency id="https://github.com/apache/cordova-plugin-compat.git" url="https://github.com/apache/cordova-plugin-compat.git" version="1.0.0" />
-
-    <config-file target="AndroidManifest.xml" parent="/*">
+ <!--    <config-file target="AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
       <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
       <uses-permission android:name="android.permission.BODY_SENSORS" />
-    </config-file>
+    </config-file> -->
 
-    <config-file target="res/xml/config.xml" parent="/*">
+    <config-file target="config.xml" parent="/*">
       <feature name="GoogleFit">
         <param name="android-package" value="com.ix.plugins.cordova.googlefit.GoogleFit" />
       </feature>
       <access origin="https://accounts.google.com/*" />
     </config-file>
 
-    <source-file src="src/android/GoogleFit.java" target-dir="src/com/ix/plugins/cordova/googlefit/GoogleFit.java" />
+    <!-- <source-file src="src/android/GoogleFit.java" target-dir="src/com/ix/plugins/cordova/googlefit/GoogleFit.java" /> -->
 
   </platform>
 
