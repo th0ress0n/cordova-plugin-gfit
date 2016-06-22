@@ -21,7 +21,6 @@
   <issue>https://github.com/th0ress0n/cordova-plugin-gfit/issues</issue>
 
   <engines>
-    <engine name="cordova" version="3.6.3" />
     <engine name="cordova-android" version="3.6.3" />
   </engines>
 
