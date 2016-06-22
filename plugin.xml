@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
   id="cordova-plugin-gfit"
   version="0.0.1">
 
@@ -20,8 +21,13 @@
   <issue>https://github.com/th0ress0n/cordova-plugin-gfit/issues</issue>
 
   <engines>
-    <engine name="cordova" version=">=3.0.0"/>
+    <engine name="cordova" version="&gt;=1.7.0" />
+    <engine name="cordova-android" version="&gt;=1.8.0" />
   </engines>
+
+  <js-module src="www/android/googlefit.js" name="googlefit">
+    <clobbers target="navigator.googlefit" />
+  </js-module>
 
 
   <!-- android -->
@@ -43,9 +49,6 @@
 
     <source-file src="src/android/GoogleFit.java" target-dir="src/com/ix/plugins/cordova/googlefit/" />
 
-    <js-module src="www/android/googlefit.js" name="googlefit">
-      <clobbers target="navigator.googlefit" />
-    </js-module>
   </platform>
 
 </plugin>
