@@ -1,11 +1,11 @@
 var exec = require("cordova/exec");
 
 var GoogleFit = function () { this.name = "googlefit"; };
-GoogleFit.prototype.BASAL_CALORIES_QUERY_PERIOD = 100 * 24 * 60 * 60 * 1000;
-GoogleFit.prototype.isAvailable = function (onSuccess, onError) { exec(onSuccess, onError, "googlefit", "isAvailable", []);};
-GoogleFit.prototype.requestAuthorization = function (datatypes, onSuccess, onError) { exec(onSuccess, onError, "googlefit", "requestAuthorization", datatypes); };
+GFit.prototype.BASAL_CALORIES_QUERY_PERIOD = 100 * 24 * 60 * 60 * 1000;
+GFit.prototype.isAvailable = function (onSuccess, onError) { exec(onSuccess, onError, "googlefit", "isAvailable", []);};
+GFit.prototype.requestAuthorization = function (datatypes, onSuccess, onError) { exec(onSuccess, onError, "googlefit", "requestAuthorization", datatypes); };
 
-GoogleFit.prototype.query = function (opts, onSuccess, onError) {
+GFit.prototype.query = function (opts, onSuccess, onError) {
   if(opts.dataType =='calories.active'){
     navigator.googlefit.queryAggregated({
       dataType:'calories.basal',
@@ -38,7 +38,7 @@ GoogleFit.prototype.query = function (opts, onSuccess, onError) {
   }
 };
 
-GoogleFit.prototype.queryAggregated = function (opts, onSuccess, onError) {
+GFit.prototype.queryAggregated = function (opts, onSuccess, onError) {
   if(opts.dataType =='calories.active'){
     navigator.googlefit.queryAggregated({
       dataType:'calories.basal',
@@ -73,7 +73,7 @@ GoogleFit.prototype.queryAggregated = function (opts, onSuccess, onError) {
   }
 };
 
-GoogleFit.prototype.store = function (data, onSuccess, onError) {
+GFit.prototype.store = function (data, onSuccess, onError) {
   if(data.dataType =='calories.active'){
     navigator.googlefit.queryAggregated({
       dataType:'calories.basal',
@@ -87,7 +87,7 @@ GoogleFit.prototype.store = function (data, onSuccess, onError) {
       var basal_ms = basalData.value / navigator.health.BASAL_CALORIES_QUERY_PERIOD;
       data.value += basal_ms * (data.endDate.getTime() - data.startDate.getTime());
       data.dataType ='calories';
-      GoogleFit.prototype.store(data, onSuccess, onError);
+      GFit.prototype.store(data, onSuccess, onError);
     }, onError);
   } else {
     if(data.startDate && (typeof data.startDate == 'object'))
@@ -101,12 +101,12 @@ GoogleFit.prototype.store = function (data, onSuccess, onError) {
   }
 };
 
-GoogleFit.prototype.toFitActivity = function(act){
+GFit.prototype.toFitActivity = function(act){
   return 'null';
   else return act;
 };
 
 cordova.addConstructor(function(){
-  navigator.googlefit = new Gfit();
+  navigator.googlefit = new GFit();
   return navigator.googlefit;
 });

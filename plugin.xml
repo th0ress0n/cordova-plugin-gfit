@@ -31,7 +31,7 @@
 
   <!-- android -->
   <platform name="android">
-    <!-- <framework src="com.google.android.gms:play-services-fitness:+" /> -->
+    <framework src="com.google.android.gms:play-services-fitness:+" />
 
  <!--    <config-file target="AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -40,13 +40,13 @@
     </config-file> -->
 
     <config-file target="config.xml" parent="/*">
-      <feature name="GoogleFit">
-        <param name="android-package" value="com.ix.plugins.cordova.googlefit.GoogleFit" />
+      <feature name="GFit">
+        <param name="android-package" value="com.ix.plugins.cordova.googlefit.GFit" />
       </feature>
       <access origin="https://accounts.google.com/*" />
     </config-file>
 
-    <!-- <source-file src="src/android/GoogleFit.java" target-dir="src/com/ix/plugins/cordova/googlefit/GoogleFit.java" /> -->
+    <source-file src="src/android/GoogleFit.java" target-dir="src/com/ix/plugins/cordova/googlefit/GoogleFit.java" />
 
   </platform>
 
