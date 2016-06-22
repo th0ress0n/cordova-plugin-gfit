@@ -35,8 +35,8 @@
     </config-file>
 
     <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="googlefit">
-        <param name="android-package" value="com.ix.plugins.cordova.googlefit" />
+      <feature name="GoogleFit">
+        <param name="android-package" value="com.ix.plugins.cordova.googlefit.GoogleFit" />
       </feature>
       <access origin="https://accounts.google.com/*" />
     </config-file>
