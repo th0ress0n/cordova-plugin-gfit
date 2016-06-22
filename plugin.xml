@@ -36,12 +36,12 @@
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="googlefit">
-        <param name="android-package" value="org.apache.cordova.googlefit.GoogleFitPlugin" />
+        <param name="android-package" value="com.ix.plugins.cordova.googlefit" />
       </feature>
       <access origin="https://accounts.google.com/*" />
     </config-file>
 
-    <source-file src="src/android/GoogleFit.java" target-dir="src/org/apache/cordova/googlefit/" />
+    <source-file src="src/android/GoogleFit.java" target-dir="src/com/ix/plugins/cordova/googlefit/" />
 
     <js-module src="www/android/googlefit.js" name="googlefit">
       <clobbers target="navigator.googlefit" />
