@@ -21,8 +21,8 @@
   <issue>https://github.com/th0ress0n/cordova-plugin-gfit/issues</issue>
 
   <engines>
-    <engine name="cordova" version="&gt;=1.7.0" />
-    <engine name="cordova-android" version="&gt;=1.8.0" />
+    <engine name="cordova" version="3.6.3-0.2.13" />
+    <engine name="cordova-android" version="3.6.3-0.2.13" />
   </engines>
 
   <js-module src="www/android/googlefit.js" name="googlefit">
