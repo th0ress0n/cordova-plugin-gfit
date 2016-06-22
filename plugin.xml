@@ -29,6 +29,8 @@
     <clobbers target="navigator.googlefit" />
   </js-module>
 
+  <!-- Adding for compatibility reasons -->
+  <dependency id="cordova-plugin-compat" version="1.0.0">
 
   <!-- android -->
   <platform name="android">
