@@ -34,7 +34,7 @@
     <framework src="com.google.android.gms:play-services-fitness:+" />
 
     <!-- Adding for compatibility reasons -->
-    <dependency id="cordova-plugin-compat" version="1.0.0">
+    <dependency id="cordova-plugin-compat" version="1.0.0" />
 
     <config-file target="AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
