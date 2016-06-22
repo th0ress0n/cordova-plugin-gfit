@@ -46,7 +46,7 @@
       <access origin="https://accounts.google.com/*" />
     </config-file>
 
-    <!-- <source-file src="src/android/GoogleFit.java" target-dir="src/com/ix/plugins/cordova/googlefit/GoogleFit.java" /> -->
+    <source-file src="src/android/GoogleFit.java" target-dir="src/com/ix/plugins/cordova/googlefit/GoogleFit.java" />
 
   </platform>
 
