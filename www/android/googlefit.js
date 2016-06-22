@@ -1,11 +1,11 @@
 var exec = require("cordova/exec");
 
-var Gfit = function () { this.name = "googlefit"; };
-Gfit.prototype.BASAL_CALORIES_QUERY_PERIOD = 100 * 24 * 60 * 60 * 1000;
-Gfit.prototype.isAvailable = function (onSuccess, onError) { exec(onSuccess, onError, "health", "isAvailable", []);};
-Gfit.prototype.requestAuthorization = function (datatypes, onSuccess, onError) { exec(onSuccess, onError, "health", "requestAuthorization", datatypes); };
+var GoogleFit = function () { this.name = "googlefit"; };
+GoogleFit.prototype.BASAL_CALORIES_QUERY_PERIOD = 100 * 24 * 60 * 60 * 1000;
+GoogleFit.prototype.isAvailable = function (onSuccess, onError) { exec(onSuccess, onError, "googlefit", "isAvailable", []);};
+GoogleFit.prototype.requestAuthorization = function (datatypes, onSuccess, onError) { exec(onSuccess, onError, "googlefit", "requestAuthorization", datatypes); };
 
-Gfit.prototype.query = function (opts, onSuccess, onError) {
+GoogleFit.prototype.query = function (opts, onSuccess, onError) {
   if(opts.dataType =='calories.active'){
     navigator.googlefit.queryAggregated({
       dataType:'calories.basal',
@@ -18,7 +18,7 @@ Gfit.prototype.query = function (opts, onSuccess, onError) {
       navigator.googlefit.query(opts, function(data){
         for(var i=0; i<data.length; i++){
           data[i].value -= basal_ms * (data[i].endDate.getTime() - data[i].startDate.getTime());
-          if(data[i].value <0) data[i].value = 0; //negative values don't make sense
+          if(data[i].value <0) data[i].value = 0;
         }
         onSuccess(data);
       }, onError);
@@ -38,7 +38,7 @@ Gfit.prototype.query = function (opts, onSuccess, onError) {
   }
 };
 
-Gfit.prototype.queryAggregated = function (opts, onSuccess, onError) {
+GoogleFit.prototype.queryAggregated = function (opts, onSuccess, onError) {
   if(opts.dataType =='calories.active'){
     navigator.googlefit.queryAggregated({
       dataType:'calories.basal',
@@ -73,7 +73,7 @@ Gfit.prototype.queryAggregated = function (opts, onSuccess, onError) {
   }
 };
 
-Gfit.prototype.store = function (data, onSuccess, onError) {
+GoogleFit.prototype.store = function (data, onSuccess, onError) {
   if(data.dataType =='calories.active'){
     navigator.googlefit.queryAggregated({
       dataType:'calories.basal',
@@ -87,7 +87,7 @@ Gfit.prototype.store = function (data, onSuccess, onError) {
       var basal_ms = basalData.value / navigator.health.BASAL_CALORIES_QUERY_PERIOD;
       data.value += basal_ms * (data.endDate.getTime() - data.startDate.getTime());
       data.dataType ='calories';
-      Gfit.prototype.store(data, onSuccess, onError);
+      GoogleFit.prototype.store(data, onSuccess, onError);
     }, onError);
   } else {
     if(data.startDate && (typeof data.startDate == 'object'))
@@ -101,7 +101,7 @@ Gfit.prototype.store = function (data, onSuccess, onError) {
   }
 };
 
-Gfit.prototype.toFitActivity = function(act){
+GoogleFit.prototype.toFitActivity = function(act){
   return 'null';
   else return act;
 };

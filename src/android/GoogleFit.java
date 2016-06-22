@@ -47,7 +47,7 @@ import java.util.concurrent.TimeUnit;
  * Health plugin Android code.
  * MIT licensed.
  */
-public class GoogleFitPlugin extends CordovaPlugin {
+public class GoogleFit extends CordovaPlugin {
     private static final String TAG = "cordova-plugin-gfit";
 
     private CordovaInterface cordova;
@@ -79,7 +79,7 @@ public class GoogleFitPlugin extends CordovaPlugin {
     public static Field monthField = Field.zzn("month",Field.FORMAT_INT32);
     public static Field yearField = Field.zzn("year",Field.FORMAT_INT32);
 
-    public GoogleFitPlugin() {}
+    public GoogleFit() {}
 
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
